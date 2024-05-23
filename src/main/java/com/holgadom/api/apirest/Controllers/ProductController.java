@@ -32,7 +32,7 @@ public class ProductController {
     }
 
     @GetMapping("/{id}")
-    public Product getById(@RequestParam Long id) {
+    public Product getById(@PathVariable Long id) {
         return this.productoRepository.findById( id )
             .orElseThrow( ()-> new RuntimeException("No se encontrol elproducto con el ID "+id) );
     }
